@@ -7,15 +7,8 @@ We began this project by using the sample code provided as the skeleton for our 
 
 ### Functionality
 
-In brief, our sender and receiver carry out the following functions:
+In brief, our program implements a simplified version of the Raft consensus protocol. The datastore runs multiple times, in parallel, and uses the Raft protocol to maintain consensus among the replicas. We used local UDP sockets to emulate a LAN, with each of the replicas connecting to a single UDP socket
+*
+### Challlenges Faced
 
-* The sender accepts data from STDIN, sending data until EOF is reached
-* The sender and receiver work together to transmit the data reliably
-* The receiver prints out the received data to STDOUT without errors
-* The sender and receiver print out specified debugging messages to STDERR
-* Both the sender and receiver gracefully exit
-* Our code can transfer a file with any number of packets dropped, damaged, duplicated, and delayed, and under a variety of different available bandwidths and link latencies
-
-### Challenges Faced
-
-The major challenge we faced was retransmitting the message efficiently. We embedded print statements and modified the functions that were implemented incorrectly. Apart from that, there were minor issues but we fixed that during debugging.
+The major we faced was sending enough packets successfully. We had to modify the code and add classes to fix this. We also embedded print statements and modified the functions that were implemented incorrectly.
